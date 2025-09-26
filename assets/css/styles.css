@@ -11,12 +11,32 @@
   --primary-font: "Young Serif", serif;
   --secondary-font: "Outfit", sans-serif;
 }
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   border: none;
   text-decoration: none;
+  
+  view-timeline-name: --aparecer-timeline;
+  view-timeline-axis: block;
+  animation-timeline: --aparecer-timeline;
+  animation-name: aparecer;
+  animation-range: entry 10% cover 30%;
+  animation-fill-mode: both;
 }
 
 body {
@@ -76,6 +96,8 @@ img {
 :where(h1, h2) {
   font-family: var(--primary-font);
   font-weight: 400;
+
+  
 }
 
 header {
