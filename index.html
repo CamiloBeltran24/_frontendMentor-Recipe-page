@@ -1,99 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe page | Frontend Mentor</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/styles.css">
-  
-  <title>Frontend Mentor | Recipe page</title>
+    <style>
+
+    </style>
 </head>
 <body>
-  <main>
-    <div class="container">
-      <header>
-        <figure>
-          <img src="./assets/images/image-omelette.jpeg" alt="image of eggs omelette">
-        </figure>
-      </header>
+    <div id="app"></div>
 
-      <section class="intro">
-        <h1>Simple Omelette Recipe</h1>
-        <p>An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked
-          to perfection, optionally filled with your choice of cheese, vegetables, or meats.</p>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return{
+                    title: 'Simple Omelette Recipe',
+                    description: "An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats.",
+                    total: "Approximately 10 minutes",
+                    preparation: "5 minutes",
+                    cooking: "5 minutes",
+                    ingredients: [
+                        "2-3 large eggs",
+                        "Salt, to taste",
+                        "Pepper, to taste",
+                        "1 tablespoon of butter or oil",
+                        "Optional fillings: cheese, diced vegetables, cooked meats, herbs"
+                    ],
+                    instructions: [
+                        {
+                            title: "Beat the eggs",
+                            description: "In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a tablespoon of water or milk for a fluffier texture."
+                            
+                        },
+                        {
+                            title: "Heat the pan",
+                            description: "Place a non-stick frying pan over medium heat and add butter or oil."
+                        },
+                        {
+                            title: "Cook the omelette",
+                            description: "Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure the eggs evenly coat the surface."
+                        },
+                        {
+                            title: "Add fillings (optional)",
+                            description: "When the eggs begin to set at the edges but are still slightly runny in the middle, sprinkle your chosen fillings over one half of the omelette."
+                        },
+                        {
+                            title: "Fold and serve",
+                            description: "As the omelette continues to cook, carefully lift one edge and fold it over the fillings. Let it cook for another minute, then slide it onto a plate."
+                        },
+                        {
+                            title: "Enjoy",
+                            description: "Serve hot, with additional salt and pepper if needed."
+                        }
+                    ],
+                    nutrition: {
+                        calories: "277kcal",
+                        carbs: "0g",
+                        protein: "20g",
+                        fat: "22g"
+                    }
+                }
+            },
+            template:`
+                <div class="container" >
+                    <v-layout>
 
-          <div class="intro__prep">
-            <h2>Preparation time</h2>
-            <ul>
-              <li><span>Total:</span> Approximately 10 minutes</li>
-              <li><span>Preparation:</span> 5 minutes</li>
-              <li><span>Cooking:</span> 5 minutes</li>
-            </ul>
-          </div>
-      </section>
 
-      <section class="ingredients">
-        <h2>Ingredients</h2>
-        <ul>
-          <li>2-3 large eggs</li>
-          <li>Salt, to taste</li>
-          <li>Pepper, to taste</li>
-          <li>1 tablespoon of butter or oil</li>
-          <li>Optional fillings: cheese, diced vegetables, cooked meats, herbs</li>
-        </ul>
-      </section>
+                        <template v-slot:header >
+                            <figure>
+                                <img src="./assets/images/image-omelette.jpeg" alt="Image of an omelette" >
+                            </figure>
 
-      <section class="instructions">
-        <h2>Instructions </h2>
-        <ol>
-          <li><span>Beat the eggs:</span> In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. 
-            You can add a tablespoon of water or milk for a fluffier texture.</li>
-          <li><span>Heat the pan:</span> Place a non-stick frying pan over medium heat and add butter or oil.</li>
-          <li><span>Cook the omelette:</span> Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure 
-            the eggs evenly coat the surface.</li>
-          <li><span>Add fillings (optional):</span> When the eggs begin to set at the edges but are still slightly runny in the 
-            middle, sprinkle your chosen fillings over one half of the omelette.</li>
-          <li><span>Fold and serve:</span> As the omelette continues to cook, carefully lift one edge and fold it over the 
-            fillings. Let it cook for another minute, then slide it onto a plate.</li>
-          <li><span>Enjoy:</span> Serve hot, with additional salt and pepper if needed.</li>
-        </ol>
-      </section>
+                            <h1>{{ title }}</h1>
+                            <p>{{ description }}</p>
+                        </template>
 
-      <section class="nutrition"> 
-        <h2>Nutrition</h2>
-        <p>The table below shows nutritional values per serving without the additional fillings.</p>
 
-        <div class="nutrition__rows">
-          <div class="row">
-            <span class="label">Calories</span>
-            <span class="number">277kcal</span>
-          </div>
-          <div class="row">
-            <span class="label">Carbs</span>
-            <span class="number">0g </span>
-          </div>
-          <div class="row">
-            <span class="label">Protein</span>
-            <span class="number">20g</span>
-          </div>
-          <div class="row">
-            <span class="label">Fat</span>
-            <span class="number">22g</span>
-          </div>
-        </div>
-      </section>
+                        <template v-slot:preparation >
+                            <ul>
+                                <li><span>Total</span>: {{ total }}</li>
+                                <li><span>Preparation</span>: {{ preparation }}</li>
+                                <li><span>Cooking</span>: {{ cooking }}</li>
+                            </ul>
+                        </template>
 
-      <footer>
-        <div class="attribution">
-          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-          Coded by <a href="https://www.linkedin.com/in/camilobeltran24/">Christian Camilo Beltran Fonseca</a>.
-        </div>
-      </footer>
-    </div>
-  </main>
+
+                        <template v-slot:ingredients >
+                            <ul>
+                                <li v-for="ingredient in ingredients">{{ ingredient }}</li>
+                            </ul>
+                        </template>
+
+
+                        <template v-slot:instructions >
+                            <ol>
+                                <li v-for="instruction in instructions">
+                                    <span>{{ instruction.title }}</span>: {{ instruction.description }}
+                                </li>
+                            </ol>
+                        </template>
+
+
+                        <template v-slot:nutrition >
+
+                            <table>
+                                <tr>
+                                    <th>Calories</th>
+                                    <td>{{ nutrition.calories }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Carbs</th>
+                                    <td>{{ nutrition.carbs }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Protein</th>
+                                    <td>{{ nutrition.protein }}</td>
+                                </tr>
+                                <tr class="last">
+                                    <th>Fat</th>
+                                    <td>{{ nutrition.fat }}</td>
+                                </tr>
+                            </table>
+                        </template>
+
+
+                    </v-layout>
+                </div>
+            `
+        })
+
+
+        app.component("v-layout", {
+            template:`
+                <header>
+                    <slot name="header"></slot>
+                </header>
+
+                <main>
+
+                    <section  class="preparation-time">
+                        <h2>Preparation time</h2>
+                        <slot name="preparation"></slot>
+                    </section>
+
+
+                    <section class="ingredients">
+                        <h2>Ingredients</h2>
+                        <slot name="ingredients"></slot>
+                    </section>
+                    
+                    <section class="instructions">
+                        <h2>Instructions</h2>
+                        <slot name="instructions"></slot>
+                    </section>
+
+                    <section class="nutrition">
+                        <h2>Nutrition</h2>
+                        <p>The table below shows nutritional values per serving without the additional fillings.</p>
+                        <slot name="nutrition"></slot>
+                    </section>
+
+
+                </main>
+            `
+        })
+
+        const vm = app.mount("#app");
+    </script>
 </body>
 </html>

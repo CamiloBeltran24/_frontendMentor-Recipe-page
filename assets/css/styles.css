@@ -1,271 +1,262 @@
 :root {
-  --white: hsl(0, 0%, 100%);
-  --Stone100: hsl(30, 54%, 90%);
-  --Stone150: hsl(30, 18%, 87%);
-  --Stone600: hsl(30, 10%, 34%);
-  --Stone900: hsl(24, 5%, 18%);
-  --Brown800: hsl(14, 45%, 36%);
-  --Rose800: hsl(332, 51%, 32%);
-  --Rose50: hsl(330, 100%, 98%);
+    --primary-font: 'Young Serif', sans-serif;
+    --secondary-font: 'Outfit', sans-serif;
 
-  --primary-font: "Young Serif", serif;
-  --secondary-font: "Outfit", sans-serif;
+    --white: #ffffff;
+    --stone-100: #f3E5D7;
+    --brown-800: #854632;
+    --stone-900: #312E2C;
+    --stone-600: #5F564D;
+    --stone-150: #E3DDD7;
+    --rose-800: #7A284E;
+    --rose-50: #FFF7FB;
+
+    --text-preset1-lh: 1;
+    --text-preset1-fz: 40px;
+    --text-preset1-ls: 0px;
+    --text-preset1-ff: var(--primary-font);
+    --text-preset2-fw: 400;
+
+    --text-preset2-lh: 1;
+    --text-preset2-fz: 28px;
+    --text-preset2-ls: 0px;
+    --text-preset2-ff: var(--primary-font);
+    --text-preset2-fw: 400;
+
+    --text-preset3-lh: 1;
+    --text-preset3-fz: 20px;
+    --text-preset3-ls: 0px;
+    --text-preset3-ff: var(--secondary-font);
+    --text-preset3-fw: 600;
+
+
+    --text-preset4-lh: 1.5;
+    --text-preset4-fz: 16px;
+    --text-preset4-ls: 0px;
+    --text-preset4-ff: var(--secondary-font);
+    --text-preset4-fw: 400;
+    --text-preset4-fw-bold: 700;
 }
 
-@keyframes aparecer {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  border: none;
-  text-decoration: none;
-  
-  view-timeline-name: --aparecer-timeline;
-  view-timeline-axis: block;
-  animation-timeline: --aparecer-timeline;
-  animation-name: aparecer;
-  animation-range: entry 10% cover 30%;
-  animation-fill-mode: both;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
 }
 
 body {
-  container-type: inline-size;
-  container-name: body;
-  background-color: var(--Stone100);
-  padding: 30px 0;
+    background-color: var(--stone-100);
+    padding: 128px 40px;
 }
 
-html {
-  font-size: 62.5%;
-}
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  width: 100%;
-  background: var(--white);
-  border-radius: 20px;
-  border-radius: 20px;
-  container-type: inline-size;
-  container-name: recipe;
-}
-
-.attribution {
-  font-size: 11px;
-  text-align: center;
-  font-family: var(--secondary-font);
-  color: var(--Stone600);
-  /* background-color: red; */
-}
-
-.attribution a {
-  color: var(--Rose800);
-  font-size: inherit;
-  text-decoration: underline;
-}
-
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-:where(section, header) {
-  
-  padding: 0 40px 20px 40px;
-}
-
-:where(p, li, a, span) {
-  font-family: var(--secondary-font);
-  font-size: 1.8rem;
-  color: var(--Stone600);
-  line-height: 1.5;
-}
-
-:where(h1, h2) {
-  font-family: var(--primary-font);
-  font-weight: 400;
-
-  
+.container{
+    width: 100%;
+    max-width: 736px;
+    margin: 0 auto;
+    border-radius: 24px;
+    overflow: hidden;
+    padding: 40px;
+    background-color: var(--white);
 }
 
 header {
-  padding: 40px 40px 30px;
-  
+    margin-bottom: 32px;
 }
 
-header figure {
-  border-radius: 15px;
-  overflow: hidden;
+figure {
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: block;
+    margin-bottom: 40px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 h1 {
-  font-size: 4rem;
-  margin-bottom: 20px;
+    font-family: var(--text-preset1-ff);
+    font-size: var(--text-preset1-fz);
+    line-height: var(--text-preset1-lh);
+    letter-spacing: var(--text-preset1-ls);
+    font-weight: var(--text-preset1-fw);
+    color: var(--stone-900);
 }
 
 h2 {
-  font-size: 3rem;
-  color: var(--Brown800);
-  margin-bottom: 20px;
+    font-family: var(--text-preset2-ff);
+    font-size: var(--text-preset2-fz);
+    line-height: var(--text-preset2-lh);
+    letter-spacing: var(--text-preset2-ls);
+    font-weight: var(--text-preset2-fw);
+    color: var(--brown-800);
 }
 
-.intro__prep {
-  background: var(--Rose50);
-  padding: 20px;
-  border-radius: 12px;
-  margin: 25px 0 0;
+h1, h2 {
+    margin-bottom: 24px;
 }
 
-.intro__prep h2 {
-  font-family: var(--secondary-font);
-  font-size: 20px;
-  color: var(--Rose800);
-  font-weight: 600;
-  margin-bottom: 10px;
+p, ol, ul {
+    line-height: 1.5;
+    font-family: var(--text-preset4-ff);
+    font-size: var(--text-preset4-fz);
+    line-height: var(--text-preset4-lh);
+    letter-spacing: var(--text-preset4-ls);
+    font-weight: var(--text-preset4-fw);
+    color: var(--stone-600);
+}
+
+section {
+    margin-bottom: 32px;
+}
+
+section ul li, section ol li{
+    padding-left: 20px;
+    line-height: var(--text-preset4-lh);
+    margin-bottom: 8px;
+}
+
+section ul li:last-of-type, section ol li:last-of-type {
+    margin-bottom: 0;
+}
+
+section ul, ol{
+    padding-left: 20px;
+}
+.preparation-time {
+    padding: 24px;
+    background-color: var(--rose-50);
+    border-radius: 12px;
+}
+
+.preparation-time h2 {
+    font-family: var(--text-preset3-ff);
+    font-size: var(--text-preset3-fz);
+    line-height: var(--text-preset3-lh);
+    letter-spacing: var(--text-preset3-ls);
+    font-weight: var(--text-preset3-fw);
+    color: var(--rose-800);
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.preparation-time ul {
+    padding: 0 24px;
+}
+
+.preparation-time ul li {
+    padding-left: 16px;
+    margin-bottom: 8px;
+    line-height: var(--text-preset4-lh);
+}
+
+.preparation-time ul li:last-of-type {
+    margin-bottom: 0;
+}
+
+.preparation-time ul li::marker {
+    color: var(--rose-800);
+}
+
+.preparation-time ul li span {
+    font-weight: var(--text-preset4-fw-bold);
+}
+
+li::marker{
+    color: var(--rose-800);
+    font-size: 13px;
+    font-weight: bold
+}
+
+section:not(.preparation-time) ul, section:not(.preparation-time) ol {
+    padding-bottom: 32px;
+    position: relative;
+}
+
+section:not(.preparation-time) ul::before, section:not(.preparation-time) ol::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--stone-150);
+
+}
+
+li {
+    span {
+        font-weight: var(--text-preset4-fw-bold);
+    }
+}
+
+table {
+    margin-top: 24px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table tr {
+    width: 100%;
+}
+
+table tr td, table tr th {
+    width: 50%;
+    text-align: left;
+    font-family: var(--text-preset4-ff);
+    font-size: var(--text-preset4-fz);
+    line-height: var(--text-preset4-lh);
+    font-weight: var(--text-preset4-fw);
+    color: var(--stone-600);
+    border-bottom: 1px solid var(--stone-150);
+    padding-left: 32px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+}
+.last td, .last th {
+    border: none;
+    padding-bottom: 0;
+}
+
+table tr td {
+    color: var(--rose-800);
+    font-weight: var(--text-preset4-fw-bold);
+}
+
+.nutrition {
+    margin-bottom: 0;
 }
 
 
-ul, ol{
-  padding:0 20px 0 25px;
+@media (min-width: 640px) and (max-width: 1023px) {
+    body {
+        padding: 128px 76px;
+    }
 }
 
-li::marker {
-  color: var(--Rose800);
-  font-weight: 600;
-}
+@media (max-width: 640px) {
+    body, .container {
+        padding: 0;
+    }
 
-ul li {
-  margin-bottom: 5px;
-}
+    figure {
+        border-radius: 0;
+        height: 171px;
+    }
 
-ol li {
-  padding-left: 15px;
-}
+    main {
+        padding: 0 32px 40px;
+    }
 
-ol li span{
-  font-weight: 600;
-}
+    header h1, header p {
+        padding: 0 32px;
+    }
 
-.intro__prep li span {
-  font-weight: 600;
-  padding-left: 20px;
-  padding-right: 5px;
-}
-
-section:not(.intro) {
-  margin-bottom: 30px;
-}
-
-.ingredients ul,
-.instructions ol {
-  position: relative;
-} 
-
-.ingredients ul::after,
-.instructions ol::after{
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  background: var(--Stone150);
-  left: 50%;
-  bottom: -25px;
-  position: absolute;
-  transform: translateX(-50%);
-}
-.nutrition__rows {
-  margin-top: 10px;
-}
-
-.nutrition__rows .row {
-  padding: 10px 40% 10px 5%;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--Stone150);
-}
-
-.nutrition__rows .row:last-of-type {
-  border: none;
-}
-
-.nutrition__rows .row .number {
-  color: var(--Rose800);
-  font-weight: 600;
-  width: 60px;
-}
-
-@media screen and (max-width: 768px) {
-  body {
-    padding: 0;
-  }
-  .container {
-    border-radius: unset;
-    padding: 0;
-  }
-}
-
-@container body (max-width: 768px) {
-  body {
-    padding: 0;
-  }
-}
-
-
-@container recipe (max-width: 768px) {
-
-
-
-  header {
-    padding: 0 0 40px 0;
-  }
-
-  header figure {
-    border-radius: unset;
-  }
-
-  h1{
-    font-size: 3.5rem;
-    line-height: 1;
-  }
-
-  h2 {
-    font-size: 2.5rem;
-  }
-
-  p, li, a, span {
-    font-size: 1.6rem;
-  }
-
-  section {
-    padding: 0 24px 25px;
-  }
-  
-  .intro__prep li span {
-    padding: 0;
-  }
-  .nutrition__rows .row {
-    padding: 10px 35% 10px 7%;
-  }
-}
-
-@container recipe (max-width: 320px) {
-    h1{
-    font-size: 2.5rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
+    h1 {
+        font-size: 36px;
+    }
 }
